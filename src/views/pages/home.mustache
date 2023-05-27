@@ -1,6 +1,28 @@
 {{>partials/header}}
-    <h1> Teste do Grimório </h1>
+    <h2> Cards em seu grimório</h2>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Custo de Mana</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Coleção</th>
+      <th scope="col">Preço Médio</th>
+    </tr>
+  </thead>
+  <tbody>
     {{#cards}}
-        {{name}}
-    {{/cards}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{cmc}}</td>
+            <td>{{type}}</td>
+            <td>{{collection}}</td>
+            <td>{{priceaverage}}</td>
+        </tr>
+    {{/cards}}    
+  </tbody>
+</table>
+    
 {{>partials/footer}}
