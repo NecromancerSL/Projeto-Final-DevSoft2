@@ -1,146 +1,79 @@
-/* Estilos para a barra de navegação */
-.navbar {
-    background-color: #f8f9fa;
-    padding: 10px;
-  }
-  
-  .navbar-brand {
-    font-size: 18px;
-    font-weight: bold;
-    color: #212529;
-  }
-  
-  .navbar-nav .nav-item {
-    margin-right: 10px;
-  }
-  
-  .nav-link {
-    font-size: 16px;
-    color: #212529;
-  }
-  
-  /* Estilos para a tabela de cards */
-  h2 {
-    margin-top: 20px;
-    font-size: 24px;
-  }
-  
-  .table {
-    margin-top: 20px;
-  }
-  
-  .table th {
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #f8f9fa;
-  }
-  
-  .table td {
-    font-size: 14px;
-  }
-  
-  /* Estilos para os botões */
-  .btn {
-    font-size: 14px;
-    padding: 5px 10px;
-    margin-right: 10px;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0069d9;
-  }
-  
-  .btn-success {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-  }
-  
-  .btn-success:hover {
-    background-color: #218838;
-  }
-  
-  .btn-danger {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-  }
-  
-  .btn-danger:hover {
-    background-color: #c82333;
-  }
-  
-  /* Estilos para o rodapé */
-  hr {
-    margin: 20px 0;
-  }
-  
-  footer {
-    font-size: 12px;
-    color: #6c757d;
-    text-align: center;
-  }
+body{
+  font-family: sans-serif;
+}
 
-  h2 {
-    margin-top: 20px;
-    font-size: 24px;
-  }
-  
-  fieldset {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-  }
-  
-  legend {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  form {
-    margin-top: 20px;
-  }
-  
-  form input[type="text"] {
-    width: 300px;
-    padding: 5px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-  
-  input[type="submit"],
-  .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover,
-  .btn-primary:hover {
-    background-color: #0069d9;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  .btn-primary,
-  .btn-primary:hover {
-    margin-right: 10px;
-  }
-  
-  .btn-primary:last-child {
-    margin-right: 0;
-  }
-  
+h2 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table td img {
+  max-width: 100px; /* Define a largura máxima da imagem */
+  max-height: 100px; /* Define a altura máxima da imagem */
+  width: auto; /* Deixa a largura automática */
+  height: auto; /* Deixa a altura automática */
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  padding-left: 10px;
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-danger:hover {
+  opacity: 0.8;
+}
+
+.btn-primary a,
+.btn-success a,
+.btn-danger a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-primary a:hover,
+.btn-success a:hover,
+.btn-danger a:hover {
+  color: #fff;
+  text-decoration: none;
+}

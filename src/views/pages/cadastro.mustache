@@ -1,17 +1,18 @@
 {{>partials/header}}
-<h2>Cadastrar novo usuário no banco</h2>
+<h2>Cadastrar nova carta no banco</h2>
 <fieldset>
-    <legend>Novo Usuário</legend>
-    <form method="POST" action="/novocard">
-        <input type="text" name="name" placeholder="Digite o nome da carta" /><br/><br/>
-        <input type="text" name="cmc" placeholder="Digite o custo de mana" /><br/><br/>
-        <input type="text" name="type" placeholder="Digite tipo de carta" /><br/><br/>
-        <input type="text" name="collection" placeholder="Digite a coleção ao qual o card pertence" /><br/><br/>
-        <input type="text" name="priceaverage" placeholder="Digite o custo médio da carta" /><br/><br/>
-        <input type="submit" value="Inserir Nova Carta" href=""/>
+    <legend>Novo Card</legend>
+    <form method="POST" action="/novocard">
+        <input type="text" name="name" placeholder="Digite o nome da carta" /> <br/><br/>
+        <input type="text" name="cmc" placeholder="Digite o custo de mana" /> <br/><br/>
+        <input type="text" name="type" placeholder="Digite o tipo de carta" /> <br/><br/>
+        <input type="text" name="collection" placeholder="Digite a coleção à qual o card pertence" /> <br/><br/>
+        <input type="text" name="priceaverage" placeholder="Digite o custo médio da carta" /> <br/><br/>
+        <input type="text" name="img" placeholder="Adicione o link da imagem da carta" /><br/><br/>
+        <input type="submit" value="Inserir Nova Carta" class="btn btn-black">
         <a href='/'>
-            <button type="button" class="btn btn-primary">Voltar</button>
+            <button type="button" class="btn btn-secondary">Voltar</button>
         </a>
-    </form>
+    </form>
 </fieldset>
 {{>partials/footer}}

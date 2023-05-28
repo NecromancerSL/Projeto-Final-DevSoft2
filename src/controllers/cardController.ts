@@ -3,6 +3,7 @@ import { Cards } from '../models/Cards';
 import router from '../routes';
 
 
+
 export const excluir = async (req: Request, res: Response ) => {
     let id : string = req.params.id;
     await Cards.destroy({ where: {id} });
@@ -20,28 +21,30 @@ export const editar = async (req: Request, res: Response) => {
   
       // Renderiza o arquivo HTML do formulário de edição e passa os dados do usuário
       res.send(`
-      <h2>Cadastrar novo usuário no banco</h2>
-      <fieldset>
-          <legend>Editando Carta</legend>
-          <form method="POST" action="/salvar">
+          <h2>Editar cadastro de carta </h2>
+          <fieldset>
+            <legend>Editando Carta</legend>
+            <form method="POST" action="/salvar">
               <input type="hidden" name="id" value="${cards.id}">
               <label for="name">Nome:</label>
-              <input type="text" name="name" value="${cards.name}" /><br/><br/>
+              <input type="text" name="name" value="${cards.name}" /><br/><br/>
               <label for="cmc">Custo de Mana:</label>
-              <input type="text" name="cmc" value="${cards.cmc}" /><br/><br/>
+              <input type="text" name="cmc" value="${cards.cmc}" /><br/><br/>
               <label for="type">Tipo de Carta:</label>
               <input type="text" name="type" value="${cards.type}" /><br/><br/>
               <label for="collection">Coleção:</label>
               <input type="text" name="collection" value="${cards.collection}"/><br/><br/>
               <label for="priceaverage">Preço Médio:</label>
               <input type="text" name="priceaverage" value="${cards.priceaverage}"/><br/><br/>
-              <input type="submit" value="Salvar Carta" href=""/>
+              <label for="img">Imagem:</label>
+              <input type="text" name="img" value="${cards.img}"/><br/><br/>
+              <input type="submit" value="Salvar Carta" href=""/>
               <a href='/'>
-                  <button type="button" class="btn btn-primary">Voltar</button>
+                <button type="button" class="btn btn-primary">Voltar</button>
               </a>
-          </form>
-      </fieldset>
-      `);
+            </form>
+          </fieldset>
+        `);
     } catch (error) {
       console.error('Erro ao obter carta:', error);
       res.status(500).send('Erro ao obter carta');
@@ -49,15 +52,17 @@ export const editar = async (req: Request, res: Response) => {
   };
 
 
-export const salvar = async (req: Request, res: Response) => {
+  export const salvar = async (req: Request, res: Response) => {
     try {
-        const id = req.body.id;
-        const newName = req.body.name;
-        const newCmc = req.body.cmc;
-        const newType = req.body.type;
-        const newCollection = req.body.collection;
-        const newPriceaverage = req.body.priceaverage;
-        const card = await Cards.findByPk(id);
+      const id = req.body.id;
+      const newName = req.body.name;
+      const newCmc = req.body.cmc;
+      const newType = req.body.type;
+      const newCollection = req.body.collection;
+      const newPriceaverage = req.body.priceaverage;
+      const newImg = req.body.img;
+  
+      const card = await Cards.findByPk(id);
   
       if (!card) {
         return res.status(404).send('Carta não encontrada');
@@ -69,6 +74,7 @@ export const salvar = async (req: Request, res: Response) => {
       card.type = newType;
       card.collection = newCollection;
       card.priceaverage = newPriceaverage;
+      card.img = newImg; // Atualiza a propriedade img com a nova URL da imagem
   
       // Salva as alterações no banco de dados
       await card.save();
@@ -78,18 +84,20 @@ export const salvar = async (req: Request, res: Response) => {
       console.error('Erro ao salvar as alterações:', error);
       res.status(500).send('Erro ao salvar as alterações');
     }
-};
+  };
+  
 
 
 export const novocard = async (req: Request, res: Response) => {
-    const { name, cmc, type, collection, priceaverage } = req.body; // obtenhem os valores do formulário
-    try {
-      // cria um novo card com os valores fornecidos
-      const newCard = await Cards.create({ name, cmc, type, collection, priceaverage});
-      res.status(201).redirect('/'); // retorne o novo card como resposta
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Erro ao inserir usuário');
-    }
-  };
-  
+  const { name, cmc, type, collection, priceaverage, img } = req.body;
+
+  try {
+    const newCard = await Cards.create({ name, cmc, type, collection, priceaverage, img });
+    res.status(201).redirect('/');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Erro ao inserir carta');
+  }
+};
+
+

@@ -3,6 +3,7 @@ import { sequelize } from '../instances/mysql';
 import { Express } from 'express';
 
 export interface CardsInterface extends Model {
+    
     id: number;
     name: string;
     cmc: string;
@@ -41,5 +42,6 @@ export const Cards = sequelize.define<CardsInterface>("Cards", {
         timestamps: false
     } 
 );
+
 
 sequelize.sync();   

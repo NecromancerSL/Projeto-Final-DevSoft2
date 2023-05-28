@@ -3,7 +3,7 @@
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
+      <th scope="col">Imagem</th>
       <th scope="col">Nome</th>
       <th scope="col">Custo de Mana</th>
       <th scope="col">Tipo</th>
@@ -16,19 +16,21 @@
   <tbody>
     {{#cards}}
         <tr>
-            <td>{{id}}</td>
+             <td><img src="{{img}}" alt="img do card"></td>
             <td>{{name}}</td>
             <td>{{cmc}}</td>
             <td>{{type}}</td>
             <td>{{collection}}</td>
-            <td>{{priceaverage}}</td>
+            <td>R$ {{priceaverage}}</td>
             <td><a href='/editar/{{id}}'><button type="button" class="btn btn-success">Editar</button></a></td>
             <td><a href='/card/{{id}}/excluir'><button type="button" class="btn btn-danger">Apagar</button></a></td>
         </tr>
     {{/cards}}    
   </tbody>
 </table>  
+<br/>
 <a href='/cadastro'>
 <button type="button" class="btn btn-primary">Novo</button>
 </a>
+
 {{>partials/footer}}
