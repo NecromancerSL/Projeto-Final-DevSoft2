@@ -1,0 +1,34 @@
+{{>partials/header}}
+    <h2> Cards em seu grimório</h2>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Custo de Mana</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Coleção</th>
+      <th scope="col">Preço Médio</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#cards}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{cmc}}</td>
+            <td>{{type}}</td>
+            <td>{{collection}}</td>
+            <td>{{priceaverage}}</td>
+            <td><a href='/editar/{{id}}'><button type="button" class="btn btn-success">Editar</button></a></td>
+            <td><a href='/card/{{id}}/excluir'><button type="button" class="btn btn-danger">Apagar</button></a></td>
+        </tr>
+    {{/cards}}    
+  </tbody>
+</table>  
+<a href='/cadastro'>
+<button type="button" class="btn btn-primary">Novo</button>
+</a>
+{{>partials/footer}}

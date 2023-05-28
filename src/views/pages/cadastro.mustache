@@ -1,0 +1,17 @@
+{{>partials/header}}
+<h2>Cadastrar novo usuário no banco</h2>
+<fieldset>
+    <legend>Novo Usuário</legend>
+    <form method="POST" action="/novocard">
+        <input type="text" name="name" placeholder="Digite o nome da carta" /><br/><br/>
+        <input type="text" name="cmc" placeholder="Digite o custo de mana" /><br/><br/>
+        <input type="text" name="type" placeholder="Digite tipo de carta" /><br/><br/>
+        <input type="text" name="collection" placeholder="Digite a coleção ao qual o card pertence" /><br/><br/>
+        <input type="text" name="priceaverage" placeholder="Digite o custo médio da carta" /><br/><br/>
+        <input type="submit" value="Inserir Nova Carta" href=""/>
+        <a href='/'>
+            <button type="button" class="btn btn-primary">Voltar</button>
+        </a>
+    </form>
+</fieldset>
+{{>partials/footer}}

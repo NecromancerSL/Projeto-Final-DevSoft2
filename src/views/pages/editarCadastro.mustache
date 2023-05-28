@@ -1,0 +1,23 @@
+{{>partials/header}}
+<h2>Cadastrar novo usuário no banco</h2>
+<fieldset>
+    <legend>Editando Carta</legend>
+    <form method="POST" action="/salvar">
+        <input type="hidden" name="id" value="{{cards.id}}">
+        <label for="name">Nome:</label>
+        <input type="text" name="name" value="{{cards.name}}" /><br/><br/>
+        <label for="cmc">Custo de Mana:</label>
+        <input type="text" name="cmc" value="{{cards.cmc}}" /><br/><br/>
+        <label for="type">Tipo de Carta:</label>
+        <input type="text" name="type" value="{{cards.type}}" /><br/><br/>
+        <label for="collection">Coleção:</label>
+        <input type="text" name="collection" value="{{cards.collection}}"/><br/><br/>
+        <label for="priceaverage">Preço Médio:</label>
+        <input type="text" name="priceaverage" value="{{cards.priceaverage}}"/><br/><br/>
+        <input type="submit" value="Salvar Carta" href=""/>
+        <a href='/'>
+            <button type="button" class="btn btn-primary">Voltar</button>
+        </a>
+    </form>
+</fieldset>
+{{>partials/footer}}
